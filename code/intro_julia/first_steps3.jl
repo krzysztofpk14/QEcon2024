@@ -82,6 +82,16 @@ typeof(mat) == Array{Float64, 2}
 # 3. M[i,j] will give you element in the i-th row and j-th column
 ####################################################################################### 
 
+function mult_table(n)
+    matrix = zeros(n, n)
+    for i in 1:n, j in 1:n
+        matrix[i, j] = i * j
+    end
+    return matrix
+end
+
+mat = mult_table(10)
+print(mat)
 
 # Broadcasting
 # In Julia, definitions of functions follow the rules of mathematics
@@ -163,7 +173,13 @@ vec_vertical .+ vec_horizontal
 ####################################################################################### 
 
 
-# Conditional extraction
+function mult_table_2(N)
+    x = collect(1:n)
+    return x * x'
+end
+mat =mult_table_2(10)
+
+# Coprintnditional extraction
 a = [10, 20, 30]
 b = [-100, 0, 100]
 
